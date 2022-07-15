@@ -29,6 +29,9 @@ services:
             SERVICE_NAME: mysql
         volumes:
             - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+            - ./docker-compose/mysql_data:/var/lib/mysql
+        ports:
+            - "3306:3306"
         networks:
             - tag
 
